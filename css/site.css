@@ -86,6 +86,11 @@ footer img:hover {
     font-size: 1rem;
 }
 
+.palindromeText {
+    color: blue;
+    font-size: 2rem;
+}
+
 @media (min-width: 575.98px) {
     .techIcons {
         font-size: 5rem;
