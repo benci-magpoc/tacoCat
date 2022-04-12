@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>APP NAME: Coding Challenge by Benci Magpoc</title>
+    <title>APP NAME: Reverse a String</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -70,18 +70,18 @@
 
     <main class="flex-shrink-0 py-3">
         <div class="container mt-5">
-            <h1>To Do List</h1>
+            <h1>Taco Cat</h1>
             <div class="row align-items-end">
                 <div class="col">
-                    <label for="txtMessage" class="form-label" id="inputLabel">Item</label>
-                    <input type="text" class="form-control" id="txtMessage" placeholder="Enter Item">
+                    <label for="txtMessage" class="form-label" id="inputLabel">Please enter a string below.</label>
+                    <input type="text" class="form-control" id="stringInput" value="Benciicneb">
                 </div>
                 <div class="col">
-                    <button id="btnSubmit" class="btn btn-lg btn-primary">Add</button>
+                    <button id="btnSubmit" class="btn btn-lg btn-primary">Is it Taco Cat?</button>
                 </div>
             </div>
             <div class=" mt-5">
-                <ol id="results" class="list-group list-group-numbered messageClass">
+                <ol id="results" class="list-group list-group-numbered">
                     <!-- Items will go here -->
                 </ol>
             </div>
@@ -127,7 +127,7 @@
 
     </script>
     <script>
-        document.getElementById("btnSubmit").addEventListener('click', getMessage);
+        document.getElementById("btnSubmit").addEventListener('click', getString);
     </script>
 
 </body>
