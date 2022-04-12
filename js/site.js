@@ -1,16 +1,17 @@
 function getString() {
-    let message = document.getElementById("stringInput").value;
+    let stringInput = document.getElementById("stringInput").value;
 
     //checks if input is null
-    if (message != "") {
+    if (stringInput != "") {
+        let originalText = stringInput;
         //convert to lower case and take out spac
-        message = message.toLowerCase().replace(/[^a-zA-Z0-9]/g, '');
+        stringInput = stringInput.toLowerCase().replace(/[^a-zA-Z0-9]/g, '');
 
         //assigning reversedString result to reversedString to pass onto view
-        let reversedString = reverseStringB(message);
+        let reversedString = reverseStringB(stringInput);
 
         //calling view and passing the reversed input
-        displayString(reversedString, checkPalindrome(message, reversedString));
+        displayString(originalText, checkPalindrome(stringInput, reversedString));
 
     } else {
         alert("Please input a valid string!");
@@ -20,8 +21,10 @@ function getString() {
 //View model
 function displayString(message, isPalindrome) {
 
+    document.getElementById("results").innerHTML = "";
     element = document.getElementById("results");
     let item = document.createElement("div");
+    item.classList.add("palindromeText");
 
     //change innerHTML to the original input and whethere it is palindrome or not
     item.innerHTML = `${message} ${isPalindrome}`;

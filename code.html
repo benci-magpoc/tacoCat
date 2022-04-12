@@ -77,40 +77,82 @@
                 <div class="col-12 col-lg-8">
                     <pre class="line-numbers">
                         <code class="language-javascript">
+                            function getString() {
+                                let stringInput = document.getElementById("stringInput").value;
                             
-                            function getMessage() {
-                                let message = document.getElementById("txtMessage").value;
-                                myFunction(message);
+                                //checks if input is null
+                                if (stringInput != "") {
+                                    let originalText = stringInput;
+                                    //convert to lower case and take out spac
+                                    stringInput = stringInput.toLowerCase().replace(/[^a-zA-Z0-9]/g, '');
+                            
+                                    //assigning reversedString result to reversedString to pass onto view
+                                    let reversedString = reverseStringB(stringInput);
+                            
+                                    //calling view and passing the reversed input
+                                    displayString(originalText, checkPalindrome(stringInput, reversedString));
+                            
+                                } else {
+                                    alert("Please input a valid string!");
+                                }
                             }
                             
+                            //View model
+                            function displayString(message, isPalindrome) {
                             
-                            function myFunction(message) {
-                            
-                                // getting ol element from the page
+                                document.getElementById("results").innerHTML = "";
                                 element = document.getElementById("results");
-                            
-                                // create a new li element
-                                let item = document.createElement("li");
-                                //add class to the element
-                                item.classList.add("list-group-item");
-                                item.classList.add("messageClass");
-                            
-                                //set the message for the li element
-                                item.innerHTML = message;
-                                // add new item to list
+                                let item = document.createElement("div");
+                                
+                                //change innerHTML to the original input and whethere it is palindrome or not
+                                item.innerHTML = `${message} ${isPalindrome}`;
                                 element.appendChild(item);
-                                                        
+                            }
+                            
+                            //function to reverse string
+                            function reverseString(message) {
+                                let reversedString = "";
+                            
+                                for (i = message.length - 1; i >= 0; i--) {
+                                    let char = message[i];
+                                    //concatenante reversedString with the character from the index of message
+                                    reversedString += char;
+                                    //convert to lower caps
+                                }
+                                console.log(reversedString);
+                                console.log(message);
+                                return reversedString;
+                            }
+                            
+                            //algorithm using built in functions
+                            function reverseStringB(message) {
+                                let reversedString = "";
+                            
+                                reversedStringArray = message.split("");
+                                reversedString = reversedStringArray.reverse().join("");
+                                return reversedString;
+                            }
+                            
+                            //algorithm to check if string is palindrome
+                            function checkPalindrome(message, reversedString) {
+                                if (message == reversedString) {
+                                    return "is a palindrome";
+                                } else {
+                                    return "is not a palindrome";
+                                }
                             }
                         </code>
                     </pre>
 
                 </div>
                 <div class="col-12 col-lg-4">
-                    <p>The code is structured in two functions</p>
-                    <h5>getMessage</h5>
-                    <p>Gets values from the user.</p>
-                    <h5>displayMessage</h5>
-                    <p>Displays the items on the page.</p>
+                    <h4>The code is structured in three functions</h4> <br>
+                    <h5>getString</h5>
+                    <p>Gets the string from the user input field.</p>
+                    <h5>reverseString</h5>
+                    <p>Reverses the input string so it can be compared to input string.</p>
+                    <h5>checkPalindrome</h5>
+                    <p>Returns a string that will indicate if original text is palindrome or not.</p>
                 </div>
             </div>
         </div>

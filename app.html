@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>APP NAME: Reverse a String</title>
+    <title>Taco Cat</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -40,7 +40,7 @@
         <div class="container-fluid">
             <a class="navbar-brand" href="./index.html">
                 <span><img src="/img/portfolioLogoLight.png" height="25" alt=""></span>
-                APP NAME
+                Taco Cat
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,20 +70,35 @@
 
     <main class="flex-shrink-0 py-3">
         <div class="container mt-5">
-            <h1>Taco Cat</h1>
-            <div class="row align-items-end">
+            <div class="row row-cols-1 row-cols-md-2">
                 <div class="col">
-                    <label for="txtMessage" class="form-label" id="inputLabel">Please enter a string below.</label>
-                    <input type="text" class="form-control" id="stringInput" value="Benciicneb">
+                    <h1>Taco Cat: A Coding Challenge</h1>
+                    <p>The Taco Cat coding challenge is based on the more traditional “Reverse a string” exercise but
+                        ultimately determines if a word or phrase is a palindrome.</p>
+                    <p>This app allows the user to enter a text and checks if it is a palindrome or not. A palindrome
+                        is a word, number, phrase, or other sequence of characters which reads the same backward as
+                        forward, such as madam or racecar.</p>
+                    <h3>Instructions</h3>
+                    <p>The user is asked to input a string. It can be a word, a phrase, numbers, or a paragraph. The
+                        program will calculate it if it is a palindrome or not. </p>
                 </div>
                 <div class="col">
-                    <button id="btnSubmit" class="btn btn-lg btn-primary">Is it Taco Cat?</button>
+                    <div class="row align-items-end">
+                        <div class="col-12 pt-5">
+                            <label for="txtMessage" class="form-label" id="inputLabel">Please enter a string
+                                below.</label>
+                            <input type="text" class="form-control" id="stringInput" value="Taco Cat">
+                        </div>
+                        <div class="col-12 pt-5">
+                            <button id="btnSubmit" class="btn btn-lg btn-primary">Is it Taco Cat?</button>
+                        </div>
+                    </div>
+                    <div class=" mt-5">
+                        <ol id="results" class="list-group list-group-numbered">
+                            <!-- Items will go here -->
+                        </ol>
+                    </div>
                 </div>
-            </div>
-            <div class=" mt-5">
-                <ol id="results" class="list-group list-group-numbered">
-                    <!-- Items will go here -->
-                </ol>
             </div>
         </div>
     </main>
