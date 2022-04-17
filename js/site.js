@@ -3,15 +3,16 @@ function getString() {
 
     //checks if input is null
     if (stringInput != "") {
-        let originalText = stringInput;
+        let originalWord = stringInput;
         //convert to lower case and take out spac
-        stringInput = stringInput.toLowerCase().replace(/[^a-zA-Z0-9]/g, '');
+        originalWord = stringInput.toLowerCase().replace(/[^a-zA-Z0-9]/g, '');
 
         //assigning reversedString result to reversedString to pass onto view
         let reversedString = reverseStringB(stringInput);
 
         //calling view and passing the reversed input
-        displayString(originalText, checkPalindrome(stringInput, reversedString));
+        // displayString(originalWord, checkPalindrome(stringInput, reversedString));
+        displayString(stringInput, palindromeObject(originalWord));
 
     } else {
         alert("Please input a valid string!");
@@ -27,7 +28,7 @@ function displayString(message, isPalindrome) {
     item.classList.add("palindromeText");
 
     //change innerHTML to the original input and whethere it is palindrome or not
-    item.innerHTML = `${message} ${isPalindrome}`;
+    item.innerHTML = `${message} ${isPalindrome.message}`;
     element.appendChild(item);
 }
 
@@ -62,4 +63,23 @@ function checkPalindrome(message, reversedString) {
     } else {
         return "is not a palindrome";
     }
+}
+
+//argorithm using objects
+function palindromeObject(originalWord) {
+    let reversedWord = "";
+    let returnMessageObject = {};
+
+    reversedWord = reverseStringB(originalWord);
+
+    if (reversedWord == originalWord) {
+        returnMessageObject.message = "is a palindrome.";
+        returnMessageObject.isPalindrome = true;
+    } else {
+        returnMessageObject.message = "is not a palindrome.";
+        returnMessageObject.isPalindrome = false;
+    }
+
+    returnMessageObject.reversedWord = reversedWord;
+    return returnMessageObject;
 }
